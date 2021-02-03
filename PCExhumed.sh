@@ -9,66 +9,54 @@
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
-rp_module_id="Nblood"
-rp_module_desc="Nblood - Blood source port"
+rp_module_id="PCExhumed"
+rp_module_desc="PCExhumed - Powerslave source port"
 rp_module_licence="GPL3 https://github.com/OpenMW/osg/blob/3.4/LICENSE.txt"
 rp_module_help="you need to put the 
-BLOOD.INI, 
-BLOOD.RFF, 
-BLOOD000.DEM, ..., BLOOD003.DEM (optional), 
-GUI.RFF, 
-SOUNDS.RFF, 
-SURFACE.DAT, 
-TILES000.ART, ..., TILES017.ART, 
-VOXEL.DAT in $romdir/ports/Nblood
+STUFF.DAT
+DEMO.VCR
+BOOK.MOV
 
-Cryptic Passage
-CP01.MAP, ..., CP09.MAP,
-CPART07.AR_, 
-CPART15.AR_, 
-CPBB01.MAP, ..., CPBB04.MAP, 
-CPSL.MAP, 
-CRYPTIC.INI 
-CRYPTIC.SMK 
-CRYPTIC.WAV "
+Recommended (but optional) - Add the games CD audio tracks as OGG files in the format exhumedXX.ogg or trackXX.ogg (where XX is the track number) to the same folder as pcexhumed.exe. The game includes tracks 02 to 19. These will provide the game with its music soundtrack and add storyline narration by the King Ramses NPC.
+"
 rp_module_section="exp"
 rp_module_flags=""
 
 
-function depends_Nblood() {
+function depends_PCExhumed() {
    getDepends cmake build-essential build-essential nasm libgl1-mesa-dev libglu1-mesa-dev libsdl1.2-dev libsdl-mixer1.2-dev libsdl2-dev libsdl2-mixer-dev flac libflac-dev libvorbis-dev libvpx-dev libgtk2.0-dev freepats
   
 }
 
-function sources_Nblood() {
+function sources_PCExhumed() {
 	gitPullOrClone "$md_build" https://github.com/Exarkuniv/NBlood.git
 }
 
-function build_Nblood() {
+function build_PCExhumed() {
     cd $md_build
    make blood
 	md_ret_require="$md_build"
 }
 
-function install_Nblood() {
+function install_PCExhumed() {
     md_ret_files=(        
-        'nblood'
+        'PCExhumed'
 		'nblood.pk3'
 		'settings.cfg'
-		'nblood.cfg'
+		'pcexhumed.cfg'
     )
 }
 	
-function configure_Nblood() {
-	mkdir "$home/.config/nblood"
-	cp -v settings.cfg "$home/.config/nblood"
-	cp -v nblood.cfg "$home/.config/nblood"
+function configure_PCExhumed() {
+	mkdir "$home/.config/pcexhumed"
+	cp -v settings.cfg "$home/.config/pcexhumed"
+	cp -v nblood.cfg "$home/.config/pcexhumed"
 	
-	mkRomDir "ports/Nblood"
-	mkRomDir "ports/Nblood/CP"
+	mkRomDir "ports/PCExhumed"
 	
-	addPort "$md_id" "nblood" "Nblood - Blood source port" "$md_inst/nblood  -j=/home/pi/RetroPie/roms/ports/Nblood"	
-	addPort "$md_id" "nblood" "Nblood - Cryptic Passage " "$md_inst/nblood -ini CRYPTIC.INI -j=/home/pi/RetroPie/roms/ports/Nblood/CP"
+	
+	addPort "$md_id" "nblood" "PCExhumed - Powersource source port" "$md_inst/pcexhumed  -j=/home/pi/RetroPie/roms/ports/PCExhumed"	
+	
 	
 
 }
