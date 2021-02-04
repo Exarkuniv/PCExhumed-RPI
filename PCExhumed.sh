@@ -58,7 +58,7 @@ function configure_PCExhumed() {
 	mkRomDir "ports/PCExhumed"
 	
 	
-	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "$md_inst/pcexhumed  -j=/home/pi/RetroPie/roms/ports/PCExhumed"	
+	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "$md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/PCExhumed"	
 	
 	
 
