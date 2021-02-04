@@ -45,15 +45,11 @@ function install_PCExhumed() {
     md_ret_files=(        
         'exhumed'
 		'nblood.pk3'
-		'settings.cfg'
-		'pcexhumed.cfg'
     )
 }
 	
 function configure_PCExhumed() {
 	mkdir "$home/.config/pcexhumed"
-	cp -v settings.cfg "$home/.config/pcexhumed"
-	cp -v nblood.cfg "$home/.config/pcexhumed"
 	
 	mkRomDir "ports/PCExhumed"
 	
