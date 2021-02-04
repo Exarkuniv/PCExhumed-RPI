@@ -16,8 +16,11 @@ rp_module_help="you need to put the
 STUFF.DAT
 DEMO.VCR
 BOOK.MOV
+in the ports/PCExhumed folder
 
-Recommended (but optional) - Add the games CD audio tracks as OGG files in the format exhumedXX.ogg or trackXX.ogg (where XX is the track number) to the same folder as pcexhumed.exe. The game includes tracks 02 to 19. These will provide the game with its music soundtrack and add storyline narration by the King Ramses NPC.
+Recommended (but optional) - Add the games CD audio tracks as OGG files in the format exhumedXX.ogg or trackXX.ogg (where XX is the track number) 
+to the same folder as pcexhumed.exe. The game includes tracks 02 to 19. These will provide the game with its music soundtrack 
+and add storyline narration by the King Ramses NPC.
 "
 rp_module_section="exp"
 rp_module_flags=""
@@ -34,7 +37,7 @@ function sources_PCExhumed() {
 
 function build_PCExhumed() {
     cd $md_build
-   make blood
+   make PCExhumed
 	md_ret_require="$md_build"
 }
 
@@ -55,7 +58,7 @@ function configure_PCExhumed() {
 	mkRomDir "ports/PCExhumed"
 	
 	
-	addPort "$md_id" "nblood" "PCExhumed - Powersource source port" "$md_inst/pcexhumed  -j=/home/pi/RetroPie/roms/ports/PCExhumed"	
+	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "$md_inst/pcexhumed  -j=/home/pi/RetroPie/roms/ports/PCExhumed"	
 	
 	
 
