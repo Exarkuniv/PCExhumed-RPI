@@ -37,13 +37,13 @@ function sources_PCExhumed() {
 
 function build_PCExhumed() {
     cd $md_build
-   make PCExhumed
+   make exhumed
 	md_ret_require="$md_build"
 }
 
 function install_PCExhumed() {
     md_ret_files=(        
-        'PCExhumed'
+        'exhumed'
 		'nblood.pk3'
 		'settings.cfg'
 		'pcexhumed.cfg'
