@@ -43,7 +43,7 @@ function build_PCExhumed() {
 
 function install_PCExhumed() {
     md_ret_files=(        
-        'exhumed'
+        'pcexhumed'
 		'nblood.pk3'
     )
 }
