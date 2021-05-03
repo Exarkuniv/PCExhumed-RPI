@@ -37,7 +37,7 @@ function sources_PCExhumed() {
 
 function build_PCExhumed() {
     cd $md_build
-   make exhumed
+   make exhumed STARTUP_WINDOW=0
 	md_ret_require="$md_build"
 }
 
@@ -54,7 +54,7 @@ function configure_PCExhumed() {
 	mkRomDir "ports/PCExhumed"
 	
 	
-	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "$md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/PCExhumed"	
+	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "XINIT:$md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/PCExhumed"	
 	
 	
 
