@@ -33,4 +33,4 @@ For support and help you can contact me here or on RetroPie forums.
 
 To install
 
-`wget https://raw.githubusercontent.com/Exarkuniv/PCExhumed-RPI/Master/PCExhumed.sh -P $HOME/RetroPie-Setup/scriptmodules/ports/`
+`wget https://raw.githubusercontent.com/Exarkuniv/PCExhumed-RPI/Master/pcexhumed.sh -P $HOME/RetroPie-Setup/scriptmodules/ports/`
