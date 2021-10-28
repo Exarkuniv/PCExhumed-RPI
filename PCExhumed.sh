@@ -9,7 +9,7 @@
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
-rp_module_id="PCExhumed"
+rp_module_id="pcexhumed"
 rp_module_desc="PCExhumed - Powerslave source port"
 rp_module_licence="GPL3 https://github.com/OpenMW/osg/blob/3.4/LICENSE.txt"
 rp_module_help="you need to put the 
@@ -26,35 +26,35 @@ rp_module_section="exp"
 rp_module_flags=""
 
 
-function depends_PCExhumed() {
+function depends_pcexhumed() {
    getDepends cmake build-essential build-essential nasm libgl1-mesa-dev libglu1-mesa-dev libsdl1.2-dev libsdl-mixer1.2-dev libsdl2-dev libsdl2-mixer-dev flac libflac-dev libvorbis-dev libvpx-dev libgtk2.0-dev freepats
   
 }
 
-function sources_PCExhumed() {
+function sources_pcexhumed() {
 	gitPullOrClone "$md_build" https://github.com/Exarkuniv/NBlood.git
 }
 
-function build_PCExhumed() {
+function build_pcexhumed() {
     cd $md_build
    make exhumed STARTUP_WINDOW=0
 	md_ret_require="$md_build"
 }
 
-function install_PCExhumed() {
+function install_pcexhumed() {
     md_ret_files=(        
         'pcexhumed'
 		'nblood.pk3'
     )
 }
 	
-function configure_PCExhumed() {
+function configure_pcexhumed() {
 	mkdir "$home/.config/pcexhumed"
 	
 	mkRomDir "ports/PCExhumed"
 	
 	
-	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "XINIT:$md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/PCExhumed"	
+	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "XINIT: $md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/PCExhumed"	
 	
 	
 
