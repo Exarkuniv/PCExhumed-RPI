@@ -37,7 +37,7 @@ function sources_pcexhumed() {
 
 function build_pcexhumed() {
     cd $md_build
-   make exhumed STARTUP_WINDOW=0
+   make exhumed USE_OPENGL=0 POLYMER=0 STARTUP_WINDOW=0
 	md_ret_require="$md_build"
 }
 
