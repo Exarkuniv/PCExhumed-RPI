@@ -51,10 +51,10 @@ function install_pcexhumed() {
 function configure_pcexhumed() {
 	mkdir "$home/.config/pcexhumed"
 	
-	mkRomDir "ports/PCExhumed"
+	mkRomDir "ports/pcexhumed"
 	
 	
-	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "XINIT: $md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/PCExhumed"	
+	addPort "$md_id" "PCExhumed" "PCExhumed - Powerslave source port" "XINIT: $md_inst/pcexhumed  -j /home/pi/RetroPie/roms/ports/pcexhumed"	
 	
 	
 
