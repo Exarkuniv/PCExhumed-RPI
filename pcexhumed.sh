@@ -52,7 +52,7 @@ function install_pcexhumed() {
 function configure_pcexhumed() {
 	mkdir "$home/.config/pcexhumed"
 	
-	cp -v nblood.cfg "$home/.config/pcexhumed.cfg"
+	cp -v pcexhumed.cfg "$home/.config/pcexhumed"
 	chown -R pi:pi "$home/.config/pcexhumed"
 	
 	mkRomDir "ports/pcexhumed"
